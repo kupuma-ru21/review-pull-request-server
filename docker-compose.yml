@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    image: postgres:14.1-alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - sample:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin-password
+      LANG: ja_JP.utf8
+      TZ: Asia/Tokyo
+volumes:
+  sample:
+    driver: local
