@@ -43,13 +43,6 @@ func main() {
 	}
 	defer db.Close()
 
-	err = db.Ping()
-	if err != nil {
-		panic(err)
-	}
-
-	fmt.Println("Successfully connected!")
-
 	m, err := migrate.New(
 		"file://db/migrations",
 		"postgres://admin:admin-password@localhost:5432?sslmode=disable",
